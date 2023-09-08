@@ -1,11 +1,37 @@
 <!doctype html>
 <html lang=de>
     <head>
-    <meta charset=utf-8>
-    <title>Schiibe Chlöpfer</title>
+        <meta charset=utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Schiibe Chlöpfer</title>
+        <script src="js/loadConent.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <h1>Schiibe Chlöpfer Zürcher Oberland</h1>
-        <p>Chlöpf dini Schiibe di ganzi Nacht, chlöpf sie di ganzi Nacht!</p>
+        <header>
+            <nav class="navbar">
+                <!-- LOGO -->
+                  <div class="logo">Chlöpfer Logo</div>
+              
+                  <!-- NAVIGATION MENU -->
+                  <ul class="nav-links">
+                    <!-- USING CHECKBOX HACK -->
+                    <input type="checkbox" id="checkbox_toggle" />
+                    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                    <!-- NAVIGATION MENUS -->
+                    <div class="menu">
+                        <li onclick="load_content('home')">Home</li>
+                        <li onclick="load_content('kontakt')">Kontakt</li>
+                    </div>
+                  </ul>
+                </nav>
+                <h1>Schiibe Chlöpfer Zürcher Oberland</h1>
+        </header>
+        <main id="content">
+            <!-- The content will be loaded here -->
+        </main>
+        <footer>
+            <p>Chlöpf dini Schiibe di ganzi Nacht, chlöpf sie di ganzi Nacht!</p>
+        </footer>
     </body>
 </html>

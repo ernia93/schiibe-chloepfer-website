@@ -5,4 +5,5 @@ function load_content(filename) {
     fetch (file)
     .then(x => x.text())
     .then(y => document.getElementById("content").innerHTML = y);
+    document.getElementById("checkbox_toggle").checked = false;
 }

@@ -33,7 +33,11 @@ li {
 
 /* LOGO */
 .logo {
-    font-size: 32px;
+    height: 60px;
+}
+
+.logo:hover{
+    cursor: pointer;
 }
 
 /* NAVBAR MENU */
@@ -106,8 +110,8 @@ input[type=checkbox] {
 @media (max-width: 768px) {
     .menu {
         display:none;
-        position: absolute;
-        background-color:teal;
+        position: static;
+        background-color:black;
         right: 0;
         left: 0;
         text-align: center;
@@ -140,5 +144,16 @@ input[type=checkbox] {
 
     .dropdown li:hover {
         background-color: #4c9e9e;
+    }
+}
+
+@media (max-width: 370px) {
+    .logo {
+        width: 100%;
+    }
+
+    .navbar {
+        display: block;
+        text-align:center;
     }
 }

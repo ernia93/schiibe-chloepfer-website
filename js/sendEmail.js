@@ -90,5 +90,6 @@ function showError(message) {
             "Überprüfe bitte deine Angaben.\n" + 
             "Falls dir deine Angaben korrekt erscheinen, kontaktiere uns doch bitte direkt per Mail an folgende E-Mail-Adresse:\n" +
             "info@schiibe-chloepfer.ch\n" + 
-            "Vielen Dank für dein Verständnis.");
+            "Vielen Dank für dein Verständnis.\n\n" +
+            "Error: " + message);
 }

@@ -12,24 +12,30 @@ function sendEmail() {
                     "PLZ: " + getJoinPostcode() + "<br>" +
                     "Ort: " + getJoinCity() + "<br>" +
                     "E-Mail: " + getJoinMail() + "<br>" +
+                    "Aktiv/Passiv: " + getActiveOrPassiveJoin() + "<br>" +
                     "Einwilligung: " + getJoinConsent();
 
-    Email.send({
+    if(validateJoinForm() == true) {
+        Email.send({
         SecureToken : securityToken,
         To : andiAddress,
         From : infoAddress,
         Subject : subjectString,
         Body : bodyString
-    }).then(
-        message => {
-            if(message == "OK") {
-                showSuccess();
+        }).then(
+            message => {
+                if(message == "OK") {
+                    showSuccess();
+                }
+                else {
+                    showError(message);
+                }
             }
-            else {
-                showError(message);
-            }
-        }
-    );
+        );
+    }
+    else {
+
+    }
 }
 
 function getJoinFirstName() {
@@ -56,12 +62,21 @@ function getJoinMail() {
     return document.getElementById("joinFormMail").value;
 }
 
+function getActiveOrPassiveJoin() {
+    if(document.getElementById("joinFormActive").checked == true) {
+        return "Aktiv";
+    }
+    else {
+        return "Passiv";
+    }
+}
+
 function getJoinConsent() {
     return document.getElementById("joinFormConsent").checked;
 }
 
 function validateJoinForm() {
-    return;
+    return true;
 }
 
 function showSuccess() {

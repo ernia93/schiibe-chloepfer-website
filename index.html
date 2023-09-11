@@ -6,26 +6,29 @@
         <title>Schiibe Chlöpfer</title>
         <script src="js/loadConent.js"></script>
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <nav class="navbar">
-                <!-- Header-Logo -->
-                <img class="logo" id="headerLogo"
-                    src="img/SchiibeChloepfer_Logo_V2_text_transparent.svg"
-                    alt="Schiibe Chlöpfer Logo"
-                    onclick="load_content('home')"/>
-                
-                <!-- Hamburger checkbox (using checkbox hack) -->
-                <input type="checkbox" class="hamburger" id="checkbox_toggle" />
-                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
-                
-                <!-- Navigation menus -->
-                <ul class="menu" id="menu">
-                    <li><a onclick="load_content('home')">Home</a></li>
-                    <li><a onclick="load_content('kontakt')"> Kontakt</a></li>
-                </ul>
-            </nav>
+            <!-- Header-Logo -->
+            <img class="logo" id="headerLogo"
+                src="img/SchiibeChloepfer_Logo_V2_text_transparent.svg"
+                alt="Schiibe Chlöpfer Logo"
+                onclick="load_content('home')"/>
+            
+            <!-- Hamburger checkbox (using checkbox hack) -->
+            <input type="checkbox" class="hamburger" id="checkbox_toggle" />
+            <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+            
+            <!-- Navigation menus -->
+            <ul class="menu" id="menu">
+                <li><a onclick="load_content('home')">Home</a></li>
+                <li><a onclick="load_content('join')">Anmeldung</a></li>
+                <li><a onclick="load_content('course')">Kurs</a></li>
+                <li><a onclick="load_content('kontakt')">Kontakt</a></li>
+            </ul>
         </header>
         <main id="content">
             <!-- The content will be loaded here -->

@@ -57,7 +57,8 @@ header {
 
 .menu li:hover {
     cursor: pointer;
-    background-color: #4c9e9e;
+    background-color: white;
+    color: black;
     border-radius: 5px;
     transition: 0.3s ease;
 }
@@ -185,7 +186,7 @@ footer {
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
   
 .foregroundCallToActionButton:hover {

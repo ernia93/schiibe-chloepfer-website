@@ -1,1 +1,42 @@
-<h1>Join!</h1>
+<div class="background" id="joinBackground">
+    <div class="backgroundOverlay">
+        <div class="foreground">
+            <form id="joinForm" class="applicationForm" onsubmit="sendEmail()" action="javascript:void(0);">
+                <label for="joinFormFirstName">Vorname</label>
+                <input type="text" class="joinFormInput" id="joinFormFirstName" name="joinFormFirstName" required>
+
+                <label for="joinFormLastName">Nachname</label>
+                <input type="text" class="joinFormInput" id="joinFormLastName" name="joinFormLastName" required>
+
+                <label for="joinFormAddress">Adresse</label>
+                <input type="text" class="joinFormInput" id="joinFormAddress" name="joinFormAddress" required>
+
+                <label for="joinFormPostcode">PLZ</label>
+                <input type="number" class="joinFormInput" id="joinFormPostcode" name="joinFormPostcode" required>
+
+                <label for="joinFromCity">Ort</label>
+                <input type="text" class="joinFormInput" id="joinFormCity" name="joinFormCity" required>
+
+                <label for="joinFormMail">E-Mail</label>
+                <input type="email" class="joinFormInput" id="joinFormMail" name="joinFormMail" required>
+
+                <div class="labelCheckboxCombo">
+                    <input type="radio" class="joinFormInput" id="joinFormActive" name="joinFormAP" required>
+                    <label for="joinFormActive">Ich möchte mich als aktives Mitglied anmelden</label>
+                </div>
+
+                <div class="labelCheckboxCombo">
+                    <input type="radio" class="joinFormInput" id="joinFormPassive" name="joinFormAP" required>
+                    <label for="joinFormPassive">Ich möchte mich als passives Mitglied anmelden</label>
+                </div>
+
+                <div class="labelCheckboxCombo">
+                    <input type="checkbox" id="joinFormConsent" name="joinFormConsent" required>
+                    <label for="joinFormConsent">Ich habe verstanden, dass ich mit dem Absenden dieses Formulars dem Verein Schiibe Chlöpfer Züri Oberland hiermit beitrete und die Anmeldung mich zum Bezahlen des Mitgliederbeitrags verpflichte.</label>
+                </div>
+
+                <button type="submit" class="foregroundCallToActionButton" id="joinFormButton" onclick="validateJoinForm()">Absenden</button>
+            </form>
+        </div>
+    </div>
+</div>

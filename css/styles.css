@@ -13,6 +13,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: black;
+    background: linear-gradient(-222.5deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(255,255,255,0.1) 100%);
+    padding: 0px 5px;
 }
 
 li {
@@ -29,7 +32,6 @@ header {
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    background-color: black;
     color: white;
     width: 100%;
     min-height: 10vh;
@@ -98,7 +100,6 @@ footer {
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    background-color: black;
     color: white;
     min-height: 10vh;
 }
@@ -144,8 +145,12 @@ footer {
     background-image: url("../img/AndiDiscGolfWurf.jpg");
 }
 
-#joinBackground::before {
+#joinFormBackground::before {
     background-image: url("../img/AndiPutSonne.JPG");
+}
+
+#joinConditionsBackground::before {
+    background-image: url("../img/SalomePut.JPG");
 }
 
 .backgroundOverlay {
@@ -200,6 +205,23 @@ footer {
 .foregroundCallToActionButton:hover {
     background-color: black;
     color: white;
+}
+
+#priceTable {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px 0px;
+    text-align: left;
+    border-spacing: 50px 5px;
+}
+
+#priceTable h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.divider {
+    height: 20px;
 }
 
 .applicationForm {
@@ -363,6 +385,15 @@ footer {
     /* ---------- Join Form ----------*/
     .applicationForm {
         width: 90vw;
+    }
+
+    #priceTable {
+        font-size: 0.9rem;
+        border-spacing: 20px 5px;
+    }
+
+    .foregroundText h1 {
+        font-size: 3rem;
     }
 }
 

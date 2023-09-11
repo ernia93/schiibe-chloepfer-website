@@ -12,30 +12,26 @@ function sendEmail() {
                     "PLZ: " + getJoinPostcode() + "<br>" +
                     "Ort: " + getJoinCity() + "<br>" +
                     "E-Mail: " + getJoinMail() + "<br>" +
-                    "Aktiv/Passiv: " + getActiveOrPassiveJoin() + "<br>" +
+                    "Art: " + getJoinType() + "<br>" +
                     "Einwilligung: " + getJoinConsent();
 
-    if(validateJoinForm() == true) {
-        Email.send({
-        SecureToken : securityToken,
-        To : andiAddress,
-        From : infoAddress,
-        Subject : subjectString,
-        Body : bodyString
-        }).then(
-            message => {
-                if(message == "OK") {
-                    showSuccess();
-                }
-                else {
-                    showError(message);
-                }
+    Email.send({
+    SecureToken : securityToken,
+    To : infoAddress,
+    From : infoAddress,
+    Subject : subjectString,
+    Body : bodyString
+    }).then(
+        message => {
+            if(message == "OK") {
+                showSuccess();
+                clearForm();
             }
-        );
-    }
-    else {
-
-    }
+            else {
+                showError(message);
+            }
+        }
+    );
 }
 
 function getJoinFirstName() {
@@ -62,21 +58,24 @@ function getJoinMail() {
     return document.getElementById("joinFormMail").value;
 }
 
-function getActiveOrPassiveJoin() {
+function getJoinBirthday() {
+    return document.getElementById("joinFormBirthday").value;
+}
+
+function getJoinType() {
     if(document.getElementById("joinFormActive").checked == true) {
         return "Aktiv";
     }
-    else {
+    else if(document.getElementById("joinFormPassive").checked == true) {
         return "Passiv";
+    }
+    else {
+        return "Gönner";
     }
 }
 
 function getJoinConsent() {
     return document.getElementById("joinFormConsent").checked;
-}
-
-function validateJoinForm() {
-    return true;
 }
 
 function showSuccess() {
@@ -88,8 +87,24 @@ function showError(message) {
     alert(  "Ups!\n" +
             "Da ist leider etwas schief gelaufen.\n" +
             "Überprüfe bitte deine Angaben.\n" + 
-            "Falls dir deine Angaben korrekt erscheinen, kontaktiere uns doch bitte direkt per Mail an folgende E-Mail-Adresse:\n" +
+            "Falls dir deine Angaben korrekt erscheinen, versuche es gleich nochmal." +
+            "Sollte dies auch scheitern, kontaktiere uns doch bitte direkt per Mail an folgende E-Mail-Adresse:\n" +
             "info@schiibe-chloepfer.ch\n" + 
             "Vielen Dank für dein Verständnis.\n\n" +
             "Error: " + message);
+}
+
+function clearForm() {
+    document.getElementById("joinFormFirstName").value = "";
+    document.getElementById("joinFormLastName").value = "";
+    document.getElementById("joinFormAddress").value = "";
+    document.getElementById("joinFormPostcode").value = "";
+    document.getElementById("joinFormCity").value = "";
+    document.getElementById("joinFormMail").value = "";
+    document.getElementById("joinFormBirthday").value = "";
+    document.getElementById("joinFormMessage").value = "";
+    document.getElementById("joinFormActive").checked = false;
+    document.getElementById("joinFormPassive").checked = false;
+    document.getElementById("joinFormGoenner").checked = false;
+    document.getElementById("joinFormConsent").checked = false;
 }

@@ -17,7 +17,7 @@ function sendEmail() {
                     "Einwilligung: " + getJoinConsent();
 
     const currentDate = new Date();
-    const startDate = new Date("2023-09-12");
+    const startDate = new Date("2023-10-01");
 
     if(currentDate >= startDate) {
         Email.send({

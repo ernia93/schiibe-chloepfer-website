@@ -40,7 +40,7 @@ header {
 
 /* Logo */
 #headerLogo {
-    max-height: 50px
+    max-height: 60px
 }
 
 #headerLogo:hover{
@@ -105,7 +105,7 @@ footer {
 }
 
 #footerLogo {
-    height: 5vh;
+    height: 4vh;
 }
 
 #footerLogo:hover {
@@ -120,6 +120,7 @@ footer {
     text-decoration: none;
     gap: 0.9em;
     align-items: center;
+    font-size: 1.1rem;
 }
 
 /* ---------- Content ----------*/
@@ -399,11 +400,6 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        height: 0,8rem;
-    }
-
-    #instagramLogo p{
-        font-size: 7vw;
     }
 
     /* ---------- Join Form ----------*/

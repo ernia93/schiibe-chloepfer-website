@@ -23,9 +23,8 @@
                                             var(--secondary-color) 8%,
                                             var(--secondary-color) 93%, 
                                             var(--background-gradient-start) 100%);
-    --background-image-gradient:    radial-gradient( 
-                                        var(--background-image-gradient-color) 90%, 
-                                        var(--secondary-color));
+    --background-image-gradient: radial-gradient(   var(--background-image-gradient-color) 90%, 
+                                                    var(--secondary-color));
 }
 
 html {

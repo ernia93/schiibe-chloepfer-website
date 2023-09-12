@@ -12,11 +12,12 @@ function sendEmail() {
                     "PLZ: " + getJoinPostcode() + "<br>" +
                     "Ort: " + getJoinCity() + "<br>" +
                     "E-Mail: " + getJoinMail() + "<br>" +
+                    "Telefonnummer: " + getJoinPhoneNumber() + "<br>" +
                     "Art: " + getJoinType() + "<br>" +
                     "Einwilligung: " + getJoinConsent();
 
     const currentDate = new Date();
-    const startDate = new Date("2023-10-01");
+    const startDate = new Date("2023-09-12");
 
     if(currentDate >= startDate) {
         Email.send({
@@ -66,6 +67,10 @@ function getJoinMail() {
     return document.getElementById("joinFormMail").value;
 }
 
+function getJoinPhoneNumber() {
+    return document.getElementById("joinFormPhoneNumber").value;
+}
+
 function getJoinBirthday() {
     return document.getElementById("joinFormBirthday").value;
 }
@@ -109,6 +114,7 @@ function clearForm() {
     document.getElementById("joinFormPostcode").value = "";
     document.getElementById("joinFormCity").value = "";
     document.getElementById("joinFormMail").value = "";
+    document.getElementById("joinFormPhoneNumber").value = "";
     document.getElementById("joinFormBirthday").value = "";
     document.getElementById("joinFormMessage").value = "";
     document.getElementById("joinFormActive").checked = false;

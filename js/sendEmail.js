@@ -15,23 +15,31 @@ function sendEmail() {
                     "Art: " + getJoinType() + "<br>" +
                     "Einwilligung: " + getJoinConsent();
 
-    Email.send({
-    SecureToken : securityToken,
-    To : infoAddress,
-    From : infoAddress,
-    Subject : subjectString,
-    Body : bodyString
-    }).then(
-        message => {
-            if(message == "OK") {
-                showSuccess();
-                clearForm();
+    const currentDate = new Date();
+    const startDate = new Date("2023-10-01");
+
+    if(currentDate >= startDate) {
+        Email.send({
+        SecureToken : securityToken,
+        To : infoAddress,
+        From : infoAddress,
+        Subject : subjectString,
+        Body : bodyString
+        }).then(
+            message => {
+                if(message == "OK") {
+                    showSuccess();
+                    clearForm();
+                }
+                else {
+                    showError(message);
+                }
             }
-            else {
-                showError(message);
-            }
-        }
-    );
+        );
+    }
+    else {
+        alert("Leider kannst du dich erst ab dem 1. Oktober 2023 bei uns anmelden.");
+    }
 }
 
 function getJoinFirstName() {

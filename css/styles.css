@@ -194,6 +194,10 @@ footer {
     background-image: url("../img/AndiVorhand.JPG");
 }
 
+#newsBackground::before {
+    background-image: url("../img/AndiBackhand.JPG");
+}
+
 .backgroundOverlay {
     min-height: var(--main-min-height);
     width: 100%;

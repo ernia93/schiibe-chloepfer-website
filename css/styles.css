@@ -28,6 +28,10 @@
                                         var(--secondary-color));
 }
 
+html {
+    scrollbar-width: none;
+}
+
 body {
     font-family: 'Oswald', sans-serif;
     overflow-x: hidden;
@@ -36,6 +40,12 @@ body {
     min-height: 100vh;
     background-image: var(--background-gradient);
     padding: 0px 5px;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+    width: 0 !important;
 }
 
 li {

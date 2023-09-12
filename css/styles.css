@@ -5,7 +5,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --form-background-color: rgba(0, 0, 0, 0.6);
+
+    /* ----- Color scheme ----- */
+    
     --primary-color: white;
     --secondary-color: black;
     --menu-hover-color: rgba(255, 255, 255, 0.8);
@@ -13,14 +15,17 @@
     --button-hover-color: rgba(0, 0, 0, 0.6);
     --text-color: var(--primary-color);
     --button-text-color: var(--secondary-color);
+    --form-background-color: rgba(0, 0, 0, 0.6);
     --background-gradient-start: rgb(100, 100, 100);
+    --background-image-gradient-color: rgba(79, 115, 112, 0.2);
     --background-gradient: linear-gradient( 170deg, 
                                             var(--background-gradient-start) 0%, 
                                             var(--secondary-color) 8%,
                                             var(--secondary-color) 93%, 
                                             var(--background-gradient-start) 100%);
-    --background-image-gradient: radial-gradient(   rgba(79, 115, 112, 0.2) 90%, 
-                                                    var(--secondary-color));
+    --background-image-gradient:    radial-gradient( 
+                                        var(--background-image-gradient-color) 90%, 
+                                        var(--secondary-color));
 }
 
 body {

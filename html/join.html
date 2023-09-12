@@ -17,21 +17,21 @@
                     </tr>
                     <tr>
                         <td>Aktivmitglied</td>
-                        <td>CHF 100.- / Jahr</td>
+                        <td>CHF 100.-</td>
                     </tr>
                     <tr>
                         <td>Aktivmitglied unter 16 Jahre</td>
-                        <td>CHF 50.- / Jahr</td>
+                        <td>CHF 50.-</td>
                     </tr>
                     <tr>
                         <td>Passivmitglied</td>
-                        <td>CHF 200.- / Jahr</td>
-                    </tr>
-                    <tr>
-                        <td>Gönner</td>
-                        <td>Betrag frei wählbar</td>
+                        <td>CHF 200.-</td>
                     </tr>
                 </table>
+                <p class="foregroundDescription">
+                    Möchtest du kein Mitglied werden und unser Projekt dennoch unterstützen?
+                    Dann werde Gönner und spende einen Betrag deiner Wahl!
+                </p>
             </div>
         </div>
     </div>
@@ -41,6 +41,7 @@
     <div class="backgroundOverlay">
         <div class="foreground">
             <form id="joinForm" class="applicationForm" onsubmit="sendEmail()" action="javascript:void(0);">
+                <h2>Anmeldeformular</h2>
                 <label for="joinFormFirstName">Vorname *</label>
                 <input type="text" class="joinFormInput" id="joinFormFirstName" name="joinFormFirstName" placeholder="Schiibmund" required>
 
@@ -86,10 +87,14 @@
                 <div class="labelCheckboxCombo" id="joinFormConsentCombo">
                     <input type="checkbox" id="joinFormConsent" name="joinFormConsent" required>
                     <label for="joinFormConsent">
-                        Ich habe verstanden, dass ich mit dem Absenden dieses Formulars dem Verein Schiibe Chlöpfer Züri Oberland
-                        beitrete und die Rechnung des Mitgliederbeitrags für das aktuelle Kalenderjahr ausgelöst wird. *
+                        Für Mitglieder: Ich habe verstanden, dass ich mit dem Absenden dieses Formulars dem Verein Schiibe Chlöpfer 
+                        Züri Oberland beitrete, und die Rechnung des Mitgliederbeitrags für das aktuelle Kalenderjahr ausgelöst wird. <br>
+                        Für Gönner: Ich habe verstanden, dass ich mit dem Absenden dieses Formulars Gönner des Vereins Schiibe Chlöpfer
+                        Züri Oberland werde, und die Rechnung des angegebenen Betrags ausgelöst wird *
                     </label>
                 </div>
+
+                <p>* Felder sind obligatorisch</p>
 
                 <button type="submit" class="foregroundCallToActionButton" id="joinFormButton" onclick="validateJoinForm()">Absenden</button>
             </form>

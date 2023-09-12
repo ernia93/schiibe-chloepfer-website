@@ -220,6 +220,7 @@ footer {
     flex-direction: column;
     gap: 10px;
     text-shadow: 3px 3px 8px var(--secondary-color);
+    font-size: 1.2rem;
 }
 
 .foregroundTitle {
@@ -243,6 +244,7 @@ footer {
     font-weight: bold;
     transition: 0.3s ease;
     text-decoration: none;
+    text-shadow: none;
 }
   
 .foregroundCallToActionButton:hover {
@@ -250,11 +252,12 @@ footer {
     color: var(--primary-color);
 }
 
-#priceTable {
+.contentTable {
     background-color: var(--form-background-color);
     border-radius: 10px;
     padding: 20px 0px;
     text-align: left;
+    vertical-align: top;
     border-spacing: 50px 5px;
 }
 
@@ -341,6 +344,15 @@ footer {
     margin: 10px;
 }
 
+.contactAddress {
+    margin: 20px;
+}
+
+#personalAddresses {
+    display: flex;
+    gap: 2em;
+}
+
 .temp {
     text-align: center;
     margin: 20px;
@@ -402,6 +414,11 @@ footer {
     /* ---------- Join Form ----------*/
     .applicationForm {
         width: 70vw;
+    }
+
+    #personalAddresses {
+        flex-direction: column;
+        gap: 0;
     }
 }
 

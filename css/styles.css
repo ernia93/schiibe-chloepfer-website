@@ -329,6 +329,7 @@ footer {
     border: none;
     box-shadow: 0px 0px 50px var(--primary-color);
     min-height: 500px;
+    margin: 10px;
 }
 
 .temp {

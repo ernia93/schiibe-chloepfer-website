@@ -22,6 +22,7 @@ li {
     list-style: none;
 }
 
+
 /* ---------- Header and Navigation  ---------- */
 
 /* Navbar */
@@ -154,6 +155,10 @@ footer {
     background-image: url("../img/SalomePut.JPG");
 }
 
+#contactBackground::before {
+    background-image: url("../img/DaniPuttSonne.JPG");
+}
+
 .backgroundOverlay {
     min-height: var(--main-min-height);
     width: 100%;
@@ -202,6 +207,7 @@ footer {
     font-size: 1rem;
     font-weight: bold;
     transition: 0.3s ease;
+    text-decoration: none;
 }
   
 .foregroundCallToActionButton:hover {
@@ -285,6 +291,17 @@ footer {
 
 #joinFormConsentCombo label {
     font-size: 0.9rem;
+}
+
+#writeUsButton {
+    font-size: 1.2rem;
+}
+
+#udiscFrame {
+    width: 100%;
+    height: 100%;
+    background: none !important;
+    visibility: visible;
 }
 
 .temp {

@@ -9,28 +9,47 @@
                     Du möchtest bereits bei der Entstehung und Umsetzung des Kurses dabei sein?
                     Dann unterstütze uns noch heute und werde ein Schiibe Chlöpfer!
                 </p>
+                <h3 class="foregroundDescription">
+                    Als Aktivmitglied geniesst du folgende Vorteile:
+                </h3>
+                <ul id="benefitsList"> 
+                    <li>Mitbestimmung bei wichtigen Entscheidungen in Form eines Stimmrechts.</li>
+                    <li>Kostenlose oder vergünstigte Teilnahme an Turnieren und anderen Vereinsanlässen.</li>
+                    <li>Eine Lizenz beim schweizer Disc Golf Verband.</li>
+                    <li>Bei Bedarf eine PDGA-Nummer für offizielle Turniere.</li>
+                </ul>
+                <p>
+                    Als Junior (unter 16 Jahre) geniesst du die selben Vorteile, wie ein normales Aktivmitglied, jedoch ohne Stimmrecht.
+                </p>
+                <p>
+                    Als Passivmitglied kriegst du ebenfalls ein Stimmrecht bei entscheidungen, musst jedoch auf die restlichen Vorteile verzichten.
+                </p>
                 <table id="priceTable" class="contentTable">
                     <tr><th colspan="2"><h2>Preis / Kalenderjahr</h2></th></tr>
                     <tr>
                         <th>Mitgliedsart</th>
-                        <th>Preis</th>
+                        <th>Beitrag</th>
                     </tr>
                     <tr>
                         <td>Aktivmitglied</td>
-                        <td>CHF 100.-</td>
+                        <td>CHF 120.-</td>
                     </tr>
                     <tr>
-                        <td>Aktivmitglied unter 16 Jahre</td>
-                        <td>CHF 50.-</td>
+                        <td>Junior</td>
+                        <td>CHF 80.-</td>
                     </tr>
                     <tr>
                         <td>Passivmitglied</td>
-                        <td>CHF 200.-</td>
+                        <td>CHF 80.-</td>
+                    </tr>
+                    <tr>
+                        <td>Gönner</td>
+                        <td>Frei wählbar</td>
                     </tr>
                 </table>
-                <p class="foregroundDescription">
-                    Möchtest du kein Mitglied werden und unser Projekt dennoch unterstützen?
-                    Dann werde Gönner und spende einen Betrag deiner Wahl!
+                <p class="foregroundDescription" id="donationAppeal">
+                    Falls du kein Mitglied werden und unser Projekt dennoch unterstützen möchtest, nehmen wir auch sehr gerne Spenden entgegen. Schreib uns unter
+                    <a href="mailto:info@schiibe-chloepfer.ch">info@schiibe-chloepfer.ch</a>.
                 </p>
             </div>
         </div>
@@ -70,18 +89,23 @@
                 <input type="text" class="joinFormInput" id="joinFromMessage" name="joinFromMessage" placeholder="Wänn chlöpfemer di nächsti schiibe?">
 
                 <div class="labelCheckboxCombo">
-                    <input type="radio" class="joinFormInput" id="joinFormActive" name="joinFormAP" required>
+                    <input type="radio" class="joinFormInput" id="joinFormActive" name="joinFormAP" onchange="changeVisibilityOfPatronContribution()" required>
                     <label for="joinFormActive">Ich möchte mich als aktives Mitglied anmelden</label>
                 </div>
 
                 <div class="labelCheckboxCombo">
-                    <input type="radio" class="joinFormInput" id="joinFormPassive" name="joinFormAP" required>
+                    <input type="radio" class="joinFormInput" id="joinFormPassive" name="joinFormAP" onchange="changeVisibilityOfPatronContribution()" required>
                     <label for="joinFormPassive">Ich möchte mich als passives Mitglied anmelden</label>
                 </div>
 
                 <div class="labelCheckboxCombo">
-                    <input type="radio" class="joinFormInput" id="joinFormGoenner" name="joinFormAP" required>
-                    <label for="joinFormGoenner">Ich möchte Gönner werden</label>
+                    <input type="radio" class="joinFormInput" id="joinFormPatron" name="joinFormAP" onchange="changeVisibilityOfPatronContribution()" required>
+                    <label for="joinFormPatron">Ich möchte Gönner werden</label>
+                </div>
+                
+                <div id="joinFormPatronContribution">
+                    <label for="joinFormPatronContributionValue">Jährlicher Beitrag: CHF</label>
+                    <input type="number" class="joinFormInput" name="joinFormPatronContributionValue" id="joinFormPatronContributionValue" placeholder="69" disabled="true" min="1">
                 </div>
 
                 <div class="labelCheckboxCombo" id="joinFormConsentCombo">

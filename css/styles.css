@@ -264,9 +264,19 @@ footer {
     border-spacing: 50px 5px;
 }
 
+#benefitsList li{
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
 #priceTable h2 {
     text-align: center;
     margin-bottom: 20px;
+}
+
+#donationAppeal a {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 .divider {
@@ -330,7 +340,7 @@ footer {
 #joinFormConsent,
 #joinFormPassive,
 #joinFormActive,
-#joinFormGoenner  {
+#joinFormPatron  {
     min-height: 0;
     height: 20px;
     width: 5%;
@@ -342,6 +352,19 @@ footer {
 
 #joinFormConsentCombo label {
     font-size: 0.9rem;
+}
+
+#joinFormPatronContribution {
+    display: flex;
+    gap: 10px;
+    align-self: flex-end;
+    align-items: center;
+    width: 85%;
+}
+
+#joinFormPatronContributionValue {
+    text-align: right;
+    width: 20%;
 }
 
 #writeUsButton {

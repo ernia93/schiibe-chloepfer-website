@@ -20,23 +20,33 @@ function sendEmail() {
     const startDate = new Date("2023-10-01");
 
     if(currentDate >= startDate) {
-        Email.send({
-        SecureToken : securityToken,
-        To : infoAddress,
-        From : infoAddress,
-        Subject : subjectString,
-        Body : bodyString
-        }).then(
-            message => {
-                if(message == "OK") {
-                    showSuccess();
-                    clearForm();
-                }
-                else {
-                    showError(message);
-                }
+        if(isPatron() == true) {
+            if(getPatronContributionValue() > 0) {
+                bodyString +=   "<br>" +
+                                "Gönnerbeitrag: " + getPatronContributionValue();
+            
+                Email.send({
+                SecureToken : securityToken,
+                To : infoAddress,
+                From : infoAddress,
+                Subject : subjectString,
+                Body : bodyString
+                }).then(
+                    message => {
+                        if(message == "OK") {
+                            showSuccess();
+                            clearForm();
+                        }
+                        else {
+                            showError(message);
+                        }
+                    }
+                );
             }
-        );
+            else {
+                alert("Gönnerbeiträge müssen höher als CHF 0.- sein!")
+            }
+        }
     }
     else {
         alert("Leider kannst du dich erst ab dem 1. Oktober 2023 bei uns anmelden.");
@@ -87,6 +97,10 @@ function getJoinType() {
     }
 }
 
+function getPatronContributionValue() {
+    return value = document.getElementById("joinFormPatronContributionValue").value;
+}
+
 function getJoinConsent() {
     return document.getElementById("joinFormConsent").checked;
 }
@@ -119,6 +133,17 @@ function clearForm() {
     document.getElementById("joinFormMessage").value = "";
     document.getElementById("joinFormActive").checked = false;
     document.getElementById("joinFormPassive").checked = false;
-    document.getElementById("joinFormGoenner").checked = false;
+    document.getElementById("joinFormPatron").checked = false;
     document.getElementById("joinFormConsent").checked = false;
+}
+
+function isPatron() {
+    return document.getElementById("joinFormPatron").checked;
+}
+
+function changeVisibilityOfPatronContribution() {
+    checkbox = document.getElementById("joinFormPatron");
+    value = document.getElementById("joinFormPatronContributionValue");
+
+    value.disabled = !checkbox.checked;
 }

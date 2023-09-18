@@ -360,11 +360,17 @@ footer {
     align-self: flex-end;
     align-items: center;
     width: 85%;
+    height: auto;
+}
+
+#joinFormPatronContribution label {
+    font-size: 1rem;
 }
 
 #joinFormPatronContributionValue {
     text-align: right;
     width: 20%;
+    height: 1px;
 }
 
 #writeUsButton {

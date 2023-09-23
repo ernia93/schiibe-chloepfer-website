@@ -19,30 +19,30 @@ function sendEmail() {
     if(isPatron() == true) {
         if(getPatronContributionValue() > 0) {
             bodyString +=   "<br>" +
-                            "Gönnerbeitrag: " + getPatronContributionValue();
-        
-            Email.send({
-            SecureToken : securityToken,
-            To : infoAddress,
-            From : infoAddress,
-            Subject : subjectString,
-            Body : bodyString
-            }).then(
-                message => {
-                    if(message == "OK") {
-                        showSuccess();
-                        clearForm();
-                    }
-                    else {
-                        showError(message);
-                    }
-                }
-            );
+                            "Gönnerbeitrag: CHF " + getPatronContributionValue();
         }
         else {
             alert("Gönnerbeiträge müssen höher als CHF 0.- sein!")
         }
     }
+
+    Email.send({
+    SecureToken : securityToken,
+    To : infoAddress,
+    From : infoAddress,
+    Subject : subjectString,
+    Body : bodyString
+    }).then(
+        message => {
+            if(message == "OK") {
+                showSuccess();
+                clearForm();
+            }
+            else {
+                showError(message);
+            }
+        }
+    );
 }
 
 function getJoinFirstName() {
@@ -127,6 +127,7 @@ function clearForm() {
     document.getElementById("joinFormPassive").checked = false;
     document.getElementById("joinFormPatron").checked = false;
     document.getElementById("joinFormConsent").checked = false;
+    document.getElementById("joinFormPatronContributionValue").checked = false;
 }
 
 function isPatron() {

@@ -16,40 +16,32 @@ function sendEmail() {
                     "Art: " + getJoinType() + "<br>" +
                     "Einwilligung: " + getJoinConsent();
 
-    const currentDate = new Date();
-    const startDate = new Date("2023-10-01");
-
-    if(currentDate >= startDate) {
-        if(isPatron() == true) {
-            if(getPatronContributionValue() > 0) {
-                bodyString +=   "<br>" +
-                                "Gönnerbeitrag: " + getPatronContributionValue();
-            
-                Email.send({
-                SecureToken : securityToken,
-                To : infoAddress,
-                From : infoAddress,
-                Subject : subjectString,
-                Body : bodyString
-                }).then(
-                    message => {
-                        if(message == "OK") {
-                            showSuccess();
-                            clearForm();
-                        }
-                        else {
-                            showError(message);
-                        }
+    if(isPatron() == true) {
+        if(getPatronContributionValue() > 0) {
+            bodyString +=   "<br>" +
+                            "Gönnerbeitrag: " + getPatronContributionValue();
+        
+            Email.send({
+            SecureToken : securityToken,
+            To : infoAddress,
+            From : infoAddress,
+            Subject : subjectString,
+            Body : bodyString
+            }).then(
+                message => {
+                    if(message == "OK") {
+                        showSuccess();
+                        clearForm();
                     }
-                );
-            }
-            else {
-                alert("Gönnerbeiträge müssen höher als CHF 0.- sein!")
-            }
+                    else {
+                        showError(message);
+                    }
+                }
+            );
         }
-    }
-    else {
-        alert("Leider kannst du dich erst ab dem 1. Oktober 2023 bei uns anmelden.");
+        else {
+            alert("Gönnerbeiträge müssen höher als CHF 0.- sein!")
+        }
     }
 }
 

@@ -465,6 +465,10 @@ footer {
         gap: 1em;
     }
 
+    #footerLogo {
+        display: none;
+    }
+
     /* ---------- Join Form ----------*/
     .applicationForm {
         width: 70vw;
